@@ -8,7 +8,7 @@ public class Lista {
     //Método para determinar si la lista está vacía
 
     public boolean listaVacia(){
-        return inicio==fin;
+        return inicio==null;
     }
 
     public void agregarInicio(int el) {
