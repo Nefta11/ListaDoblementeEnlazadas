@@ -28,6 +28,7 @@ public class Lista {
     }
 
     //Método para imprimir 
+    
     public void imprimir(){
         if(!listaVacia()){
             System.out.println(" ");
