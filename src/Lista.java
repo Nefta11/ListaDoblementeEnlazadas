@@ -41,6 +41,7 @@ public class Lista {
         }
     }
 
+    //Metodo para eliminar el nodo del inicio
     public void eliminarInicio() {
         if (!listaVacia()) {
             inicio = inicio.siguiente;
