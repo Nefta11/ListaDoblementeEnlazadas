@@ -44,19 +44,16 @@ public class Lista {
     public void eliminarInicio() {
         // Verifica si la lista no está vacía
         if (!listaVacia()) {
-            // Mueve el inicio al siguiente nodo
             inicio = inicio.siguiente;
-
-            // Verifica si después de mover el inicio la lista sigue no vacía
             if (inicio != null) {
-                // Establece que el nodo anterior al nuevo inicio es nulo
+                
                 inicio.anterior = null;
             } else {
-                // Si no hay más elementos en la lista, también actualiza el fin
+                
                 fin = null;
             }
         } else {
-            // La lista está vacía, no se puede eliminar nada
+        
             System.out.println("La lista está vacía, no se puede eliminar el inicio.");
         }
     }
