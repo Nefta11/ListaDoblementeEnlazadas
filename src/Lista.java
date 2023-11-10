@@ -42,7 +42,6 @@ public class Lista {
     }
 
     public void eliminarInicio() {
-        // Verifica si la lista no está vacía
         if (!listaVacia()) {
             inicio = inicio.siguiente;
             if (inicio != null) {
