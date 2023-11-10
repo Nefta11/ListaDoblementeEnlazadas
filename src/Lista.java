@@ -43,20 +43,34 @@ public class Lista {
 
     //Metodo para eliminar el nodo del inicio
     public void eliminarInicio() {
-        if (!listaVacia()) {
-            inicio = inicio.siguiente;
-            if (inicio != null) {
-                
-                inicio.anterior = null;
-            } else {
-                
-                fin = null;
+        if(!listaVacia()){
+            if(inicio==fin){
+                inicio=fin=null;
+            }else{
+                inicio=inicio.siguiente;
+                inicio.anterior=null;
             }
         } else {
         
             System.out.println("La lista está vacía, no se puede eliminar el inicio.");
         }
     }
+
+    //Método para eliminar el nodo final
+    public void eliminarFin() {
+        if(!listaVacia()){
+            if(inicio==fin){
+                inicio=fin=null;
+            }else{
+                fin=fin.anterior;
+                fin.siguiente=null;
+            }
+        }else {
+        
+            System.out.println("La lista está vacía, no se puede eliminar el final.");
+        }
+    }
+    
 
     // Método para imprimir
 
