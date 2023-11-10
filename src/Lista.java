@@ -72,6 +72,13 @@ public class Lista {
     }
     
 
+    public void eliminarElementoE(){
+        if(!listaVacia()){
+
+            
+        }
+    }
+
     // Método para imprimir
 
     public void imprimir() {
