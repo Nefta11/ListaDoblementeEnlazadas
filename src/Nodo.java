@@ -2,6 +2,7 @@ public class Nodo {
     
     public int Dato;
     Nodo siguiente, anterior;
+    public int valor;
 
 
     //constructor para añadir un elemento al inicio

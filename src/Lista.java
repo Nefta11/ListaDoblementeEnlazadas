@@ -74,7 +74,7 @@ public class Lista {
 
     public void eliminarElementoE(){
         if(!listaVacia()){
-
+            
             
         }
     }

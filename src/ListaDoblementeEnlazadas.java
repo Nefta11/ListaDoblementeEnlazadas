@@ -8,7 +8,7 @@ public class ListaDoblementeEnlazadas {
         int opcion = 0, el;
 
         do{
-            opcion=Integer.parseInt(JOptionPane.showInputDialog(null,"1. Agregar el valor del elemento\n2. Agregar el valor al final\n3. Eliminar inicio\n4. Eliminar Final\n5.Cerrar"));
+            opcion=Integer.parseInt(JOptionPane.showInputDialog(null,"1. Agregar el valor del elemento\n2. Agregar el valor al final\n3. Eliminar inicio\n4. Eliminar Final\n5.Eliminar elemento espesifico\n6.Cerrar"));
             switch ((opcion)) {
                 case 1: el= Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa el valor del elemento"));
                     ldl.agregarInicio(el);
@@ -26,14 +26,16 @@ public class ListaDoblementeEnlazadas {
                     ldl.eliminarFin();
                     ldl.imprimir();
                     break;
-                case 5: break;
+                    case 5:
+                    el = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el valor del elemento a eliminar"));
+                    ldl.eliminarElementoE(el);
+                    ldl.imprimir();
+                    break;
+                case 6: break;
             
                 default: JOptionPane.showMessageDialog(null,"Opcion incorrecta bobo");
                     break;
             }
-
-
-
-        }while(opcion<5);
+        }while(opcion<6);
     }
 }
