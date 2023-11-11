@@ -72,13 +72,36 @@ public class Lista {
     }
     
 
-    public void eliminarElementoE(){
+    public void eliminarElementoE(int el){
+        System.out.println("");
+        if (inicio == fin && el == inicio.Dato){
+            inicio=fin=null;
+        }else if(el == inicio.Dato) {
+            inicio=inicio.siguiente;
+        }else { 
+            Nodo recorrido = inicio;
+            while (recorrido != null) {
+                if(recorrido.Dato == el){
+                    recorrido.siguiente.anterior=inicio;
+                    recorrido.anterior.siguiente=fin;
+                }
+            }
+        }
+    }
+
+        public void buscarElemento(){
         if(!listaVacia()){
             
             
         }
     }
 
+        public void actualizarElemento(){
+        if(!listaVacia()){
+            
+            
+        }
+    }
     // Método para imprimir
 
     public void imprimir() {
