@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Lista {
     private Nodo inicio, fin;
 
@@ -41,66 +43,84 @@ public class Lista {
         }
     }
 
-    //Metodo para eliminar el nodo del inicio
+    // Metodo para eliminar el nodo del inicio
     public void eliminarInicio() {
-        if(!listaVacia()){
-            if(inicio==fin){
-                inicio=fin=null;
-            }else{
-                inicio=inicio.siguiente;
-                inicio.anterior=null;
+        if (!listaVacia()) {
+            if (inicio == fin) {
+                inicio = fin = null;
+            } else {
+                inicio = inicio.siguiente;
+                inicio.anterior = null;
             }
         } else {
-        
+
             System.out.println("La lista está vacía, no se puede eliminar el inicio.");
         }
     }
 
-    //Método para eliminar el nodo final
+    // Método para eliminar el nodo final
     public void eliminarFin() {
-        if(!listaVacia()){
-            if(inicio==fin){
-                inicio=fin=null;
-            }else{
-                fin=fin.anterior;
-                fin.siguiente=null;
+        if (!listaVacia()) {
+            if (inicio == fin) {
+                inicio = fin = null;
+            } else {
+                fin = fin.anterior;
+                fin.siguiente = null;
             }
-        }else {
-        
+        } else {
+
             System.out.println("La lista está vacía, no se puede eliminar el final.");
         }
     }
-    
 
-    public void eliminarElementoE(int el){
+    public void eliminarElementoE(int el) {
         System.out.println("");
-        if (inicio == fin && el == inicio.Dato){
-            inicio=fin=null;
-        }else if(el == inicio.Dato) {
-            inicio=inicio.siguiente;
-        }else { 
+        if (inicio == fin && el == inicio.Dato) {
+            inicio = fin = null;
+        } else if (el == inicio.Dato) {
+            inicio = inicio.siguiente;
+        } else {
             Nodo recorrido = inicio;
             while (recorrido != null) {
-                if(recorrido.Dato == el){
-                    recorrido.siguiente.anterior=inicio;
-                    recorrido.anterior.siguiente=fin;
+                if (recorrido.Dato == el) {
+                    recorrido.siguiente.anterior = inicio;
+                    recorrido.anterior.siguiente = fin;
                 }
             }
         }
     }
 
-        public void buscarElemento(){
-        if(!listaVacia()){
-            
-            
-            
+    public void buscarElemento(int el) {
+        if (!listaVacia()) {
+            System.out.println("");
+            Nodo recorrido = inicio;
+            int contador = 1;
+            while (recorrido != null) {
+
+                if (recorrido.Dato == el) {
+                    JOptionPane.showMessageDialog(null,
+                            "El elemento " + recorrido.Dato + " Se encuentra en la posicion: \n" + contador);
+                    break;
+                }
+                contador++;
+                recorrido = recorrido.siguiente;
+            }
         }
     }
 
-        public void actualizarElemento(){
-        if(!listaVacia()){
-            
-            
+    public void actualizarElemento(int el, int newDate) {
+        if (!listaVacia()) {
+            Nodo recorrido = inicio;
+
+            while (recorrido != null) {
+                if (recorrido.Dato == el) {
+                    recorrido.Dato = newDate;
+
+                    JOptionPane.showMessageDialog(null,
+                            "El elemento " + recorrido.anterior.Dato + " Se actualizo a :\n" + recorrido.Dato);
+                }
+                recorrido = recorrido.siguiente;
+            }
         }
     }
     // Método para imprimir
